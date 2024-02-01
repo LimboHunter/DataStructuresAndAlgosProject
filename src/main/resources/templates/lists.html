@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>mainPage</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+This is lists page!
+<table class="ArrayTable">
+    <tr >
+        <td th:text="${list.display()} "></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
