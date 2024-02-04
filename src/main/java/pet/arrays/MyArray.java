@@ -17,7 +17,6 @@ public class MyArray {
 
     private final int capacity;
 
-
     private final long range = Settings.ARRAY.range();
 
     MyArray(int capacity){

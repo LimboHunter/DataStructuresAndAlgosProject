@@ -4,19 +4,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pet.Settings;
-import pet.arrays.MyArray;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/linklists")
 public class LListsController {
+    LinkList list;
 
     @GetMapping()
     public String showArraysPage(Model model){
 
-        LinkList list= new LinkList();
+        list= new LinkList();
         list.fillRandom();
         model.addAttribute("list", list);
-        return "lists";
+        return "Lists/lists";
+    }
+
+    @RequestMapping(value = "/ReloadListTable", method = RequestMethod.POST)
+    public String UpdateList(Model model){
+        list= new LinkList();
+        list.fillRandom();
+        model.addAttribute("list", list);
+        return "Lists/ListsFragments :: New_List";
     }
 }

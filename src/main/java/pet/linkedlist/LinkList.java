@@ -20,21 +20,21 @@ public class LinkList {
         Link newLink = new Link(data);
 
         if(curr == null) curr = new Link(0);
-
         curr.next = newLink;
 
         if(head == null) head = curr.next;
-
         curr = curr.next;
 
     }
     public String display(){
         StringBuilder sb = new StringBuilder();
         Link now = head;
+
         while(now != null){
             sb.append(Long.toString(now.getLinkData())).append("->");
             now = now.next;
         }
+
         sb.append("null");
         //log.info(sb.toString());
         return sb.toString();
@@ -43,8 +43,10 @@ public class LinkList {
     public void fillRandom(){
         int size = Settings.LINKLIST.size();
         final long range = Settings.LINKLIST.range();
+
         for(int i = 0; i < size; i++)
             insert( (long) (Math.random() * range));
+
         head = head.next;
     }
 }

@@ -1,0 +1,10 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<table th:fragment="New_Array" class="ArrayTable" id="ArrayTable">
+    <tr>
+        <td th:each="ar : ${array.getArray() }" th:text="${ar} "></td>
+    </tr>
+</table>
+</body>
+</html>

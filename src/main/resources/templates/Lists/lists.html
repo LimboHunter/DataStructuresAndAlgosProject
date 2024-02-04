@@ -4,14 +4,17 @@
 <head>
     <title>mainPage</title>
     <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 This is lists page!
-<table class="ArrayTable">
+<script src="/Scripts/List/loadListsPage.js"></script>
+<table th:fragment="New_List" id="ListTable" class="ArrayTable">
     <tr >
         <td th:text="${list.display()} "></td>
     </tr>
 </table>
+<button onclick="updateListTable()">Generate</button>
 
 
 </body>

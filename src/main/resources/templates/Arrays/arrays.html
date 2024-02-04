@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>mainPage</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<script src="/Scripts/Array/loadArraysPage.js"> </script>
+<body>
+This is arrays page!
+<div>
+    <table class="ArrayTable" id="ArrayTable">
+        <tr>
+            <td th:each="ar : ${array.getArray() }" th:text="${ar} "></td>
+        </tr>
+    </table>
+    <button onclick="updateArrayTable()">Generate</button>
+</div>
+</body>
+</html>
